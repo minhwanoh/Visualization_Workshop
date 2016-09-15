@@ -97,3 +97,10 @@ plot(0, type = "n", axes = F)
 legend("bottomright", lwd = 2, col = colours, chosen_players, bty = "n")
 
 
+
+# Interactive Shot Charts using Shiny
+## source code: https://github.com/toddwschneider/ballr
+packages <- c("shiny", "ggplot2", "hexbin", "dplyr", "httr", "jsonlite")
+install.packages(packages)
+library(shiny)
+runGitHub("ballr", "toddwschneider")
