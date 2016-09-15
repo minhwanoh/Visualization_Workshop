@@ -1,17 +1,19 @@
 # Interactive Shot Charts using Shiny
-## https://github.com/toddwschneider/ballr
+## source code: https://github.com/toddwschneider/ballr
 packages <- c("shiny", "ggplot2", "hexbin", "dplyr", "httr", "jsonlite")
 install.packages(packages)
 library(shiny)
 runGitHub("ballr", "toddwschneider")
 
 
+# For the Data Source and details: https://www.kaggle.com/hugomathien/soccer
+# code: https://www.kaggle.io/svf/296694/56e206c05dc60d6cfc1d777ffb730249/__results__.html
 
 packages2 = c("RSQLite", "DT", "DescTools", "qtlcharts", "ggvis", "radarchart", "tidyr")
 install.packages(packages2)
 
 
-con <- dbConnect(SQLite(), dbname="./data/database.sqlite")
+con <- dbConnect(SQLite(), dbname="database.sqlite")
 
 # list all tables
 dbListTables(con)
@@ -23,6 +25,8 @@ player_stats <-  player_stats %>%
   rename(player_stats_id = id) %>%
   left_join(player, by = "player_api_id")
 
+# Browsing data
+## see what’s available in my joined table:
 str(player_stats)
 
 latest_ps <- 
@@ -31,6 +35,7 @@ latest_ps <-
   top_n(n = 1, wt = date_stat) %>%
   as.data.frame()
 
+#only interested in top 20 players so I choose them from the latest observation based on overall_rating:
 top20 <- 
   latest_ps %>% 
   arrange(desc(overall_rating)) %>% 
