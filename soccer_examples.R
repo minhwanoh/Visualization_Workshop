@@ -9,7 +9,7 @@ runGitHub("ballr", "toddwschneider")
 # For the Data Source and details: https://www.kaggle.com/hugomathien/soccer
 # code: https://www.kaggle.io/svf/296694/56e206c05dc60d6cfc1d777ffb730249/__results__.html
 
-packages2 = c("RSQLite", "DT", "DescTools", "qtlcharts", "ggvis", "radarchart", "tidyr")
+packages2 <- c("RSQLite", "DT", "DescTools", "qtlcharts", "ggvis", "radarchart", "tidyr")
 install.packages(packages2)
 
 
