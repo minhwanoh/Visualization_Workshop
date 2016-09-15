@@ -1,10 +1,3 @@
-# Interactive Shot Charts using Shiny
-## source code: https://github.com/toddwschneider/ballr
-packages <- c("shiny", "ggplot2", "hexbin", "dplyr", "httr", "jsonlite")
-install.packages(packages)
-library(shiny)
-runGitHub("ballr", "toddwschneider")
-
 
 # For the Data Source and details: https://www.kaggle.com/hugomathien/soccer
 # code: https://www.kaggle.io/svf/296694/56e206c05dc60d6cfc1d777ffb730249/__results__.html
