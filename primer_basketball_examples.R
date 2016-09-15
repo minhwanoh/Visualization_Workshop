@@ -1,6 +1,7 @@
-packages=c("clue", "DAAG", "lsmeans")
+packages=c("clue", "DAAG", "lsmeans", "RColorBrewer")
 install.packages(packages)
 
+library(RColorBrewer)
 # load the data
 data(VADeaths)
 
