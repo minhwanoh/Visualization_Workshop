@@ -1,1 +1,3 @@
-# Visulazation Workshop Example code and data
+# Visulazation Workshop 
+
+Example code and data
